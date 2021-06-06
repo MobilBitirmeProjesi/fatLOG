@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class KayitFormu extends StatefulWidget {
   @override
@@ -145,6 +146,12 @@ formuTestEt(String kullaniciAdi, String email, String parola) async {
     //Giriş Yapacak
     yetkiSonucu = await yetki.signInWithEmailAndPassword(
         email: email, password: parola);
+    if(yetkiSonucu == true){
+      Fluttertoast.showToast(msg: "Başarıyla Giriş Yapıldı...");
+    }
+    else{
+      Fluttertoast.showToast(msg: "Giriş Yapılamadı...");
+    }
   }
   //Kayıt Durumu False İse Kaydol
   else {

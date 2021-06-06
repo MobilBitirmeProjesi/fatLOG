@@ -1,4 +1,5 @@
 import 'package:bitirme_projesi_/HomePage.dart';
+import 'package:bitirme_projesi_/besin.dart';
 import 'package:bitirme_projesi_/kayitekrani.dart';
 import 'package:bitirme_projesi_/profil.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
   String text1 = "AnaSayfa", text2 = "Yediklerim", text3 = "Ekle", text4 = "Profilim";
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Profil(),
+    Besin(),
     Profil(),
     Profil(),
   ];
