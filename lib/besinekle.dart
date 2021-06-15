@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
 class BesinEkle extends StatefulWidget {
   @override
   _BesinEkleState createState() => _BesinEkleState();
@@ -12,7 +13,7 @@ class _BesinEkleState extends State<BesinEkle> {
   TextEditingController yiyecekAd = TextEditingController();
   TextEditingController birim = TextEditingController();
   TextEditingController miktar = TextEditingController();
-
+  TextEditingController vakit = TextEditingController();
   verileriKaydet() async {
     FirebaseAuth yetki = FirebaseAuth.instance;
     final FirebaseUser mevcutKullanici = await yetki.currentUser();
@@ -29,12 +30,15 @@ class _BesinEkleState extends State<BesinEkle> {
       "yiyecekAd": yiyecekAd.text,
       "birim": birim.text,
       "miktar": miktar.text,
+      "ogunVakti": vakit.text,
       "zaman": zamanTutucu.toString(),
       "tamZaman": zamanTutucu
     });
 
     Fluttertoast.showToast(msg: "Yiyecek Başarıyla Eklendi");
   }
+
+  String _dropDownValue;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +48,16 @@ class _BesinEkleState extends State<BesinEkle> {
       ),
       body: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+            controller: vakit,
+              decoration: InputDecoration(
+                labelText: "Öğün Vakti",
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(

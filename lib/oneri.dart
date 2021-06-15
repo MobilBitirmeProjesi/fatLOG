@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:intl/intl.dart';
 
-class GecmisEklenenler extends StatefulWidget {
+class OneriOlustur extends StatefulWidget {
   @override
-  _GecmisEklenenlerState createState() => _GecmisEklenenlerState();
+  _OneriOlusturState createState() => _OneriOlusturState();
 }
 
-class _GecmisEklenenlerState extends State<GecmisEklenenler> {
+class _OneriOlusturState extends State<OneriOlustur> {
+  int gereken_D_Vit = 100;
+  int gereken_A_Vit = 100;
+  int gereken_E_Vit = 100;
+  int gereken_K_Vit = 100;
+  double gereken_n3_yag = 0.5;
+  double gereken_n6_yag = 4.4;
+
+  int alinan_A_Vit = 44;
+  int alinan_D_Vit = 55;
+  int alinan_E_Vit = 33;
+  int alinan_K_Vit = 66;
+  double alinan_n3_yag = 5.0;
+  double alinan_n6_yag = 4.4;
+
+  String yiyecekAd;
+  List<String> yiyecekler = List();
+
   //--Mevcut Kullanici uidsi
   String mevcutkullaniciUidTutucu;
 
@@ -33,9 +49,6 @@ class _GecmisEklenenlerState extends State<GecmisEklenenler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Tükettiğim Yiyecekler"),
-      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -59,13 +72,15 @@ class _GecmisEklenenlerState extends State<GecmisEklenenler> {
                   //Eklenme Zamanı Tutucu
                   var eklenmeZamani =
                       (alinanVeri[index]["tamZaman"] as Timestamp).toDate();
+                  yiyecekler.add((alinanVeri[index]["yiyecekAd"]).toString());
+                  oneri(yiyecekler);
                   return Container(
                     margin: EdgeInsets.fromLTRB(10, 5, 10, 3),
                     height: 90,
                     decoration: BoxDecoration(
                       color: Color(0xFFE0C332),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(width:5, color: Colors.grey),
+                      border: Border.all(width: 5, color: Colors.grey),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -84,45 +99,8 @@ class _GecmisEklenenlerState extends State<GecmisEklenenler> {
                               SizedBox(
                                 height: 7,
                               ),
-                              Text(
-                                DateFormat.yMd()
-                                    .add_jm()
-                                    .format(eklenmeZamani)
-                                    .toString(),
-                                style: TextStyle(
-                                  fontSize: 16,
-                                ),
-                              ),
                             ],
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                alinanVeri[index]["ogunVakti"],
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.normal),
-                              ),
-                              Text(
-                                alinanVeri[index]["miktar"] +" "+alinanVeri[index]["birim"],
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.normal),
-                              ),
-                            ],
-                          ),
-                          IconButton(
-                              icon: Icon(Icons.delete),
-                              onPressed: () async {
-                                await Firestore.instance
-                                    .collection("Yiyecekler")
-                                    .document(mevcutkullaniciUidTutucu)
-                                    .collection("Sabah")
-                                    .document(
-                                      alinanVeri[index]["zaman"],
-                                    )
-                                    .delete();
-                              })
                         ],
                       ),
                     ),
@@ -134,5 +112,13 @@ class _GecmisEklenenlerState extends State<GecmisEklenenler> {
         ),
       ),
     );
+  }
+}
+
+void oneri(yiyecekler){
+  debugPrint(yiyecekler[0]);
+  print("yiyecekler: ${yiyecekler[0]}");
+  for (int i = 0; i < 2; i++) {
+    print("a");
   }
 }

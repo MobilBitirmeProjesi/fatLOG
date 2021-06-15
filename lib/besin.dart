@@ -35,7 +35,7 @@ class _BesinState extends State<Besin> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "Sabah Vakti",
+                          "Yenilen Gıda Verisi Ekle",
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.normal),
                         ),
@@ -69,7 +69,7 @@ class _BesinState extends State<Besin> {
         ),
         backgroundColor: Color(0xFFE0C332),
         onPressed: () {
-          //Görev Ekleme Sayfasına Gitsin
+          //Geçmiş Sayfasına Gitsin
           Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => GecmisEklenenler()),

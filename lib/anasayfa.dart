@@ -1,5 +1,6 @@
 import 'package:bitirme_projesi_/HomePage.dart';
 import 'package:bitirme_projesi_/besin.dart';
+import 'package:bitirme_projesi_/bossayfa.dart';
 import 'package:bitirme_projesi_/kayitekrani.dart';
 import 'package:bitirme_projesi_/profil.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Besin(),
-    Profil(),
+    Bossayfa(),
     Profil(),
   ];
   int _currentIndex = 0;
