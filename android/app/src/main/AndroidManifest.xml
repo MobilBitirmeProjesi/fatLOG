@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bitirmeprojesi.oneriuyg">
+    package="com.example.bitirme_projesi_">
    <application
         android:label="bitirme_projesi_"
         android:icon="@mipmap/ic_launcher">

@@ -13,7 +13,7 @@ class AnaSayfa extends StatefulWidget {
 
 class _AnaSayfaState extends State<AnaSayfa> {
   int navBarItem = 0;
-  String text1 = "AnaSayfa", text2 = "Yediklerim", text3 = "Ekle", text4 = "Profilim";
+  String text1 = "Ana Sayfa", text2 = "Öneri", text3 = "Öğünler", text4 = "Profil";
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Besin(),
@@ -32,7 +32,14 @@ class _AnaSayfaState extends State<AnaSayfa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Öneri Uygulaması"),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF35B535), Color(0xFF00563F)],
+            ),
+          ),
+        ),
+        title: Text("fatLOG"),
         actions: [
           IconButton(
               icon: Icon(Icons.exit_to_app),
@@ -52,24 +59,26 @@ class _AnaSayfaState extends State<AnaSayfa> {
       bottomNavigationBar: BottomNavigationBar(
         //onTap: onTappedBar,
         //currentIndex: _currentIndex,
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Colors.green,
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: text1,
-              backgroundColor: Colors.blue),
+              backgroundColor: Colors.green),
 
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border),
               label: text2,
-              backgroundColor: Colors.blue),
+              backgroundColor: Colors.green),
           BottomNavigationBarItem(
               icon: Icon(Icons.camera),
               label: text3,
-              backgroundColor: Colors.blue),
+              backgroundColor: Colors.green),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle),
               label: text4,
-              backgroundColor: Colors.blue),
+              backgroundColor: Colors.green),
 
         ],
         currentIndex: navBarItem,

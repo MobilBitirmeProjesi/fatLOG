@@ -11,6 +11,13 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF35B535), Color(0xFF00563F)],
+            ),
+          ),
+        ),
         title: Text("Kayıt Sayfası"),
         centerTitle: true,
       ),

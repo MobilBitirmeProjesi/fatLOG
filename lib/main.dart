@@ -11,8 +11,18 @@ class Yapilacaklar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       theme: ThemeData(
-        //primaryColor: Color(0xFFE0C332),
+        //primaryColor: Color(0xFF35B535),
+        //colors: LinearGradient(colors: [Colors.white24, Colors.black]),
+        //primaryColor: Color(),
+
+
+         // primarySwatch: Color(0xFF35B535),
+
+        /*color: LinearGradient(
+          colors: [Colors.red, Colors.orange],
+        ),*/
       ),
       debugShowCheckedModeBanner: false,
       home: StreamBuilder(

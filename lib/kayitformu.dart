@@ -100,7 +100,7 @@ class _KayitFormuState extends State<KayitFormu> {
                     kayitEkle();
                   },
                   style: ElevatedButton.styleFrom(
-                    //primary: Color(0xFFE0C332),
+                    primary: Color(0xFF35B535),
                     shadowColor: Colors.black,
                   ),
                 ),
