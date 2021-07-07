@@ -34,6 +34,13 @@ class _GecmisEklenenlerState extends State<GecmisEklenenler> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF35B535), Color(0xFF00563F)],
+            ),
+          ),
+        ),
         title: Text("Tükettiğim Yiyecekler"),
       ),
       body: Container(
@@ -63,9 +70,12 @@ class _GecmisEklenenlerState extends State<GecmisEklenenler> {
                     margin: EdgeInsets.fromLTRB(10, 5, 10, 3),
                     height: 90,
                     decoration: BoxDecoration(
-                      color: Color(0xFFE0C332),
+                      gradient: LinearGradient(
+                        colors: [Colors.red, Colors.orange],
+                      ),
+                      //color: Color(0xFFE0C332),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(width:5, color: Colors.grey),
+                      border: Border.all(width:5, color: Colors.blue),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

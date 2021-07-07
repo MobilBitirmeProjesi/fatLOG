@@ -44,6 +44,13 @@ class _BesinEkleState extends State<BesinEkle> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF35B535), Color(0xFF00563F)],
+            ),
+          ),
+        ),
         title: Text("Yiyecek Ekle"),
       ),
       body: Column(

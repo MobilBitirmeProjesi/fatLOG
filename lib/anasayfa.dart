@@ -3,17 +3,24 @@ import 'package:bitirme_projesi_/besin.dart';
 import 'package:bitirme_projesi_/bossayfa.dart';
 import 'package:bitirme_projesi_/kayitekrani.dart';
 import 'package:bitirme_projesi_/profil.dart';
+import 'package:bitirme_projesi_/sayfalar/girissayfasi.dart';
+import 'package:bitirme_projesi_/servisler/yetkilendirmeservisi.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:line_icons/line_icons.dart';
+import 'package:provider/provider.dart';
 
 class AnaSayfa extends StatefulWidget {
   @override
   _AnaSayfaState createState() => _AnaSayfaState();
 }
 
+
 class _AnaSayfaState extends State<AnaSayfa> {
   int navBarItem = 0;
   String text1 = "Ana Sayfa", text2 = "Öneri", text3 = "Öğünler", text4 = "Profil";
+  //String aktifKullaniciId = Provider.of<YetkilendirmeServisi>(context, listen: false).aktifKullaniciId;
+
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Besin(),
@@ -30,6 +37,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
   }
   @override
   Widget build(BuildContext context) {
+    String aktifKullaniciId = Provider.of<YetkilendirmeServisi>(context, listen: false).aktifKullaniciId;
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -48,7 +56,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => KayitSayfasi(),
+                        builder: (_) => GirisSayfasi(),
                       ),
                       (route) => false);
                 });
@@ -68,15 +76,15 @@ class _AnaSayfaState extends State<AnaSayfa> {
               backgroundColor: Colors.green),
 
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border),
+              icon: Icon(Icons.lightbulb),
               label: text2,
               backgroundColor: Colors.green),
           BottomNavigationBarItem(
-              icon: Icon(Icons.camera),
+              icon: Icon(Icons.local_dining),
               label: text3,
               backgroundColor: Colors.green),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
+              icon: Icon(Icons.perm_identity),
               label: text4,
               backgroundColor: Colors.green),
 

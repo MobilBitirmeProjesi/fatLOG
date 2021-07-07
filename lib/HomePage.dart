@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
+              /*ElevatedButton(
                 onPressed: () {
                   //OneriOlustur();
                   oneriOlusturFonksiyonu();
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                   shadowColor: Colors.redAccent,
                   elevation: 5,
                 ),
-              ),
+              ),*/
             ],
           ),
         ],

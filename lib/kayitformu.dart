@@ -116,10 +116,10 @@ class _KayitFormuState extends State<KayitFormu> {
                 },
                 child: kayitDurumu
                     ? Text(
-                  "Hesabım Yok",
+                  "Hesabım Yok",style: TextStyle(color: Colors.green),
                 )
                     : Text(
-                  "Zaten Hesabım Var",
+                  "Zaten Hesabım Var",style: TextStyle(color: Colors.green),
                 ),
               ),
             ),

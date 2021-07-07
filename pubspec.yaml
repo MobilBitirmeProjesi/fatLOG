@@ -36,6 +36,8 @@ dev_dependencies:
   cloud_firestore: 0.13.4+2
   fluttertoast:
   intl:
+  line_icons: ^2.0.0
+  provider:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -51,6 +53,8 @@ flutter:
   assets:
     - images/
     - images/user.png
+    - images/logo.png
+    - images/yemek1.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
