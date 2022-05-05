@@ -1,4 +1,4 @@
-package com.example.bitirme_projesi_
+package com.yazilimca.bitirme_projesi_
 
 import io.flutter.embedding.android.FlutterActivity
 
